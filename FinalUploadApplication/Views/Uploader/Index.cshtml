@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/BlockUI/jquery.blockUI.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Uploader-style.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/FileUpload/Uploader-Common.js"></script>
+<script src="~/Scripts/FileUpload/Uploader-single.core.js"></script>
+
+
+<div id="Main">
+    <h2>Index</h2>
+
+    <div class="CreateLink">
+        @Ajax.ActionLink("Add Files", "Upload", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "createView", OnSuccess = "createMode()", InsertionMode = InsertionMode.Replace })
+    </div>
+
+    <div id="createView">
+    </div>
+</div>
