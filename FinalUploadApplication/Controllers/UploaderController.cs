@@ -55,7 +55,7 @@ namespace FinalUploadApplication.Controllers
                     return Json(new
                     {
                         statusCode = 400,
-                        status = "Partial Upload,something went wrong",
+                        status = "Partially Saved,something went wrong",
                         file = string.Empty
                     }, JsonRequestBehavior.AllowGet);
                 }
@@ -64,7 +64,7 @@ namespace FinalUploadApplication.Controllers
                     return Json(new
                     {
                         statusCode = 400,
-                        status = "No files to upload",
+                        status = "No files to save",
                         file = string.Empty
                     }, JsonRequestBehavior.AllowGet);
                 }

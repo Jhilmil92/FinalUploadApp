@@ -2,8 +2,9 @@
     if (e.lengthComputable) {
         var percentComplete = Math.round(e.loaded * 100 / e.total);
         $("#FileProgress").css("width", percentComplete + '%').attr('aria-valuenow', percentComplete);
-        var timeSpent = new Date().getTime() - startTime
-        $('#FileProgress span').text(percentComplete + "% Time spent so far :" + String(timeSpent));
+        var timeSpent = new Date().getTime() - startTime;
+        var timeSpentInSeconds = ((timeSpent % 60000)/1000).toFixed(2);
+        $('#FileProgress span').text(percentComplete + "% Time spent so far :" + timeSpentInSeconds + "s");
     }
     else {
         $('#FileProgress span').text('unable to compute');
